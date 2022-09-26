@@ -24,7 +24,7 @@ function WindowEmergente(props) {
               </div>
               <div className="flex flex-col w-9/12 h-16 mt-5">
                 <select className="mt-1 h-full px-3 py-2 border border-solid border-slate-600 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" name="" id="">
-                  <option selected disabled hidden>Especialidad</option>
+                  <option defaultValue disabled hidden>Especialidad</option>
                   <option value="">Medicina General</option>
                   <option value="">Odontologia</option>
                   <option value="">Ginecología y obstetricia o tocología</option>
