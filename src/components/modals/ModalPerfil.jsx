@@ -9,6 +9,7 @@ const ModalPerfil = () => {
 
   const handleCloseButton = () => {
     sessionStorage.removeItem('User');
+    sessionStorage.removeItem('Token');
     window.location.reload();
   }
   
