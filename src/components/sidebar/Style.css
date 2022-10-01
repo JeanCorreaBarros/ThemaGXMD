@@ -12,10 +12,14 @@ main {
 }
 
 .title {
-  width: 150vh;
+  width: 100%;
   font-size: 3rem;
   display: grid;
   place-items: center;
+}
+
+.password {
+  background-color: rgba(20, 20, 20, 0.4);
 }
 
 /* Sidebar */
@@ -34,7 +38,7 @@ main {
   z-index: 1000;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 639px) {
   .sidebar {
     display: none;
   }
@@ -72,7 +76,7 @@ main {
   border-radius: 8px;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 639px) {
   .sidebar_mobile {
     visibility: hidden;
   }
@@ -162,6 +166,7 @@ main {
   margin-right: 14px;
   margin-top: 15px;
 }
+
 
 .img_empresa {
   margin-top: 10px;

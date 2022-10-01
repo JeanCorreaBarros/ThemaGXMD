@@ -39,7 +39,7 @@ const Navbar = (props) => {
   const BotomMasMobile = styled.div`
     visibility: ${(props) => (verdad ? "hidden" : "")};
 
-    @media (max-width: 500px) {
+    @media (max-width: 639px) {
       visibility: ${(props) => (verdad ? "visible" : "")};
     }
   `;
