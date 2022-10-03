@@ -3,8 +3,7 @@
 }
 
 .formulario__input {
-  max-width: 60%;
-  width: 60%;
+  width: 100%;
   border: 1px solid #66a31c;
   height: 34px;
   padding: 0 40px 0 13px;

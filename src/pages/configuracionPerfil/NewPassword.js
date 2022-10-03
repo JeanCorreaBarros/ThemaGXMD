@@ -1,10 +1,11 @@
 import genomax from "../../assets/img/favicon.ico";
 import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import {Link }from 'react-router-dom'
 import "./Style.css";
 
-const NewPassword = () => {
-  const [ cambiarFormularioEnviado] = useState(false);
+const NewPassword = (props) => {
+  const [formularioEnviado, cambiarFormularioEnviado] = useState(false);
   return (
     <>
       <Formik
@@ -14,21 +15,20 @@ const NewPassword = () => {
         }}
         validate={(valores) => {
           let errores = {};
-          
 
           // Validacion Password
           if (!valores.password) {
             errores.password = "Ingrese su nueva Contraseña";
           } else if (!/^[a-zA-Z0-9]{4,12}$/.test(valores.password)) {
-            errores.password = "❌ Escribir minimo 4 digitos (solo letras y numeros). ";
+            errores.password =
+              "❌(minimo 4   caracteres, solo letras y numeros)";
           }
 
-          // Validacion Password2 
+          // Validacion Password2
           if (valores.password !== valores.password2) {
             errores.password2 = "Contraseña Incorrecta❗";
-          } 
+          }
 
-          
           return errores;
         }}
         onSubmit={(valores, { resetForm }) => {
@@ -39,63 +39,95 @@ const NewPassword = () => {
       >
         {({ errors }) => (
           <div className="password w-full h-screen grid place-items-center">
-            <div className="h-[72%] w-[95%] sm:w-[416px] bg-white p-2.5 -mt-[62px] sm:mt-[28px]">
-              <div className="w-full flex justify-center items-center mt-1 mb-3">
-                <img src={genomax} alt="" className="w-11 h-11" />
-                <span className="text-emerald-600 pl-1 text-lg">GenomaX</span>
-              </div>
-              <div className="border-b w-full"></div>
-                <h1 className="font-bold mt-5 ml-5 text-[16.4px]">
-                  Cambio de Contraseña 🔐
+              <div className="h-[454px] max-h-[454px] w-[95%] sm:w-[380px] bg-white p-2.5 -mt-[62px] sm:mt-[28px]">
+                <div className="w-full flex justify-center items-center mt-1 mb-3">
+                  <img src={genomax} alt="" className="w-11 h-11" />
+                  <span className="text-emerald-600 pl-1 text-lg">GenomaX</span>
+                </div>
+                <div className="border-b w-full"></div>
+                <h1 className="mt-5 ml-5 text-[16.4px]">
+                  🔑 Cambiar Contraseña
                 </h1>
                 <Form className="w-full">
-                  <div className="ml-5 h-[255px]">
-                  <div>
-                    <label htmlFor="password_actual" className="block font-semibold mt-5 mb-[3px] cursor-pointer">Contraseña Actual</label>
-                    <Field
-                      type="password"
-                      id="password_actual"
-                      name="password_actual"
-                      className="formulario__input"
-                    />
+                  <div className="ml-4 mr-4 h-[258px]">
+                    <div className="">
+                      <label
+                        htmlFor="password_actual"
+                        className="block mt-5 mb-[3px] text-[14.4px] cursor-pointer"
+                      >
+                        Contraseña Actual
+                      </label>
+                      <Field
+                        type="password"
+                        id="password_actual"
+                        name="password_actual"
+                        className="formulario__input"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="password"
+                        className="block mt-5 mb-[3px] text-[14.4px] cursor-pointer"
+                      >
+                        Nueva Contraseña
+                      </label>
+                      <Field
+                        type="password"
+                        id="password"
+                        name="password"
+                        className="formulario__input"
+                      />
+                      <ErrorMessage
+                        name="password"
+                        component={() => (
+                          <span className="w-full block text-red-600 text-[13.7px]">
+                            {errors.password}
+                          </span>
+                        )}
+                      />
+                    </div>
+                    <div className="mb-8">
+                      <label
+                        htmlFor="password2"
+                        className="block mt-5 mb-[3px] text-[13.7px] cursor-pointer"
+                      >
+                        Confirmar Contraseña
+                      </label>
+                      <Field
+                        type="password"
+                        id="password2"
+                        name="password2"
+                        className="formulario__input"
+                      />
+                      <ErrorMessage
+                        name="password2"
+                        component={() => (
+                          <span className="block text-red-600 text-[14.4px]">
+                            {errors.password2}
+                          </span>
+                        )}
+                      />
+                    </div>
                   </div>
-                  <div>
-                    <label htmlFor="password" className="block font-semibold mt-5 mb-[3px] cursor-pointer">Nueva Contraseña</label>
-                    <Field
-                      type="password"
-                      id="password"
-                      name="password"
-                      className="formulario__input"
-                    />
-                    <ErrorMessage
-                      name="password"
-                      component={() => (
-                        <span className="block text-red-600 text-[14.4px]">{errors.password}</span>
-                      )}
-                    />
+                  <div className="w-full flex justify-center pr-2">
+                  <Link to="/">  
+                    <button
+                      type="button"
+                      className="w-[85px] h-[36px] bg-blue-600 shadow-xl text-white border hover:bg-blue-500 border-solid border-blue-700 rounded-sm"
+                    >
+                      Cancelar
+                    </button>
+                    </Link>
+                    <button
+                      type="submit"
+                      className="w-[85px] h-[36px] ml-7 mb-1 bg-lime-600 shadow-xl text-white border hover:bg-lime-500 border-solid border-lime-700 rounded-sm"
+                    >
+                      Guardar
+                    </button>
                   </div>
-                  <div className="mb-8">
-                    <label htmlFor="password2" className="block font-semibold mt-5 mb-[3px] cursor-pointer">Confirmar Contraseña</label>
-                    <Field
-                      type="password"
-                      id="password2"
-                      name="password2"
-                      className="formulario__input"
-                    />
-                    <ErrorMessage
-                      name="password2"
-                      component={() => (
-                        <span className="block text-red-600 text-[14.4px]">{errors.password2}</span>
-                      )}
-                    />
-                  </div>
-                  </div>
-                  <div className="border-b w-full"></div>
-                  <div className="w-full flex justify-end mt-[14px] pr-2">
-                  <button type="submit" className="w-24 h-8 bg-lime-600 shadow-xl text-white border hover:bg-lime-500 border-solid border-lime-700 rounded">Actualizar</button>
-                  </div>
+                  {formularioEnviado && <p className="relative -top-[75px] text-center text-green-600 text-[16px]">Su contraseña se ha restablecido!</p>}
                 </Form>
-            </div>
+              </div>
           </div>
         )}
       </Formik>

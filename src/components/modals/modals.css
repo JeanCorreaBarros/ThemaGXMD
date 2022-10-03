@@ -11,6 +11,20 @@
   box-shadow: 0px 1px 11px 0px rgba(0,0,0,0.64);
 }
 
+@media (max-width: 639px) {
+  .modal_perfil{
+    top: -324px;
+    transform: translateX(-62%);
+  }
+}
+
+@media (max-width: 361px) {
+  .modal_perfil{
+    top: -324px;
+    transform: translateX(-58%);
+  }
+}
+
 .modal_mas{
   position: absolute;
   top: 58px;
@@ -22,6 +36,13 @@
   border-radius: 7px;
   padding-top: 30px;
   box-shadow: 0px 1px 11px 0px rgba(0,0,0,0.64);
+}
+
+@media (max-width: 639px) {
+  .modal_mas{
+    top: -240px;
+    left: 29%;
+  }
 }
 
 .modal_notificacion{

@@ -1,10 +1,11 @@
-import React from 'react';
 import {Link }from 'react-router-dom'
+
+
 import './modals.css';
 
 import perfil from '../../assets/img/perfil.png';
 
-const ModalPerfil = () => {
+const ModalPerfil = (props) => {
   const  user = JSON.parse(sessionStorage.getItem('User'));
 
   const handleCloseButton = () => {
@@ -12,7 +13,6 @@ const ModalPerfil = () => {
     sessionStorage.removeItem('Token');
     window.location.reload();
   }
-  
 
   return (
     <div className="modal_perfil">

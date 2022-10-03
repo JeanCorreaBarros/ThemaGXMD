@@ -7,7 +7,7 @@ import ModalNotificacion from "../modals/ModalNotificacion";
 import ModalPerfil from "../modals/ModalPerfil";
 import "./Navbar.css";
 import SideBar from "../sidebar/Sidebar";
-import { useClickOutside } from "../../services/Mause";
+  import { useClickOutside } from "../../services/Mause";
 import perfil from "../../assets/img/perfil.png";
 import styled from "styled-components";
 
@@ -20,7 +20,6 @@ const Navbar = (props) => {
 
   function NavItem(props) {
     const [isOpen, setIsOpen] = useState(false);
-
     let domNode = useClickOutside(() => {
       setIsOpen(false);
     });
