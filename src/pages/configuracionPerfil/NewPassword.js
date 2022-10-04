@@ -113,19 +113,19 @@ const NewPassword = (props) => {
                   <Link to="/">  
                     <button
                       type="button"
-                      className="w-[85px] h-[36px] bg-blue-600 shadow-xl text-white border hover:bg-blue-500 border-solid border-blue-700 rounded-sm"
+                      className="w-[90px] h-[36px] bg-blue-600 shadow-xl text-white border hover:bg-blue-700 border-solid border-blue-700 rounded-sm"
                     >
                       Cancelar
                     </button>
                     </Link>
                     <button
                       type="submit"
-                      className="w-[85px] h-[36px] ml-7 mb-1 bg-lime-600 shadow-xl text-white border hover:bg-lime-500 border-solid border-lime-700 rounded-sm"
+                      className="w-[90px] h-[36px] ml-6 mb-1 bg-lime-600 shadow-xl text-white border hover:bg-lime-700 border-solid border-lime-700 rounded-sm"
                     >
                       Guardar
                     </button>
                   </div>
-                  {formularioEnviado && <p className="relative -top-[75px] text-center text-green-600 text-[16px]">Su contraseña se ha restablecido!</p>}
+                  {formularioEnviado && <p className="relative -top-[75px] text-center text-lime-600 text-[16px]">Su contraseña se ha restablecido!✔</p>}
                 </Form>
               </div>
           </div>
