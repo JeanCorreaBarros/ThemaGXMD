@@ -1,3 +1,4 @@
+import React, {useEffect, useState} from 'react'
 import { NavLink } from "react-router-dom";
 import { RiArrowLeftSLine } from "react-icons/ri";
 import { BiLineChartDown } from "react-icons/bi";
@@ -9,6 +10,36 @@ import SidebarMenu from "./SidebarMenu";
 import { routes } from "./Data";
 
 const SideBar = (props) => {
+
+  const [data, setData] = useState("");
+  const  url  =  "http://api.genomax.co/NXSAPI/v1.0/auth/Menu/";
+    let raw = {    
+      "perfil": 0,
+      "aplicacion" : 3
+    };
+
+    let options =   {
+      method: "POST",
+      body: JSON.stringify(raw)
+    }
+  const peticiones = async ()=>{
+    await fetch(url,options)
+    .then(response => response.json())
+    .then(json =>{
+      setData(json)
+      console.log(json)
+    }) 
+    .catch(error=>{
+      console.log(error);
+    })
+  }
+
+  useEffect(()=>{
+    peticiones();
+  },[])
+
+
+
   const Toggle = () => {
     props.cambio(!props.estado);
   };
