@@ -10,6 +10,7 @@ import SideBar from "../sidebar/Sidebar";
 import { useClickOutside } from "../../services/Mause";
 import perfil from "../../assets/img/perfil.png";
 import { motion } from "framer-motion";
+import Buscador from "../otros/Buscador";
 
 const Nav = styled.span`
   background: #66a31c;
@@ -69,6 +70,7 @@ const Navbar = (props) => {
           </motion.div>
         </div>
         <div className="flex justify-center items-between gap-x-12 pr-5">
+        <Buscador/>
           <div className=" w-12 h-12 flex justify-center  items-center rounded-3xl hover:bg-lime-700">
             <NavItem icon={<VscBellDot className="text-xl text-white " />}>
               <ModalNotificacion />
