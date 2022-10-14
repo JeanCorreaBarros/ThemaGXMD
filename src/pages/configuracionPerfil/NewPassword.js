@@ -4,7 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import {Link }from 'react-router-dom'
 import "./Style.css";
 
-const NewPassword = (props) => {
+const NewPassword = () => {
   const [formularioEnviado, cambiarFormularioEnviado] = useState(false);
   return (
     <>
@@ -125,7 +125,7 @@ const NewPassword = (props) => {
                       Guardar
                     </button>
                   </div>
-                  {formularioEnviado && <p className="relative -top-[75px] text-center text-lime-600 text-[16px]">Su contraseña se ha restablecido!✔</p>}
+                  {formularioEnviado && <p className="relative -top-[75px] text-center text-lime-600 text-[15px]">Su contraseña se ha restablecido correctamente✔</p>}
                 </Form>
               </div>
           </div>

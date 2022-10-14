@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import favicon from "../../assets/img/favicon.ico";
 import img from "../../assets/img/empresa.jpg";
 import SidebarMenu from "./SidebarMenu";
+import { Link } from "react-router-dom";
 import { routes } from "./Data";
 
 const SideBar = (props) => {
@@ -32,7 +33,7 @@ const SideBar = (props) => {
 
   return (
     <>
-     <motion.div
+      <motion.div
         animate={{
           minWidth: props.estado ? "248px" : "66px",
 
@@ -148,23 +149,25 @@ const SideBar = (props) => {
           }}
         >
           <div className="soporte">
-            <ul className="items_soporte" activeClassName="active">
-              <motion.div
-                animate={{
-                  fontSize: props.estado ? "" : "17px",
-                  marginLeft: props.estado ? "10px" : "20px",
-                }}
-              >
-                <BiLineChartDown className="icon_soporte" />
-              </motion.div>
-              <motion.div
-                animate={{
-                  display: props.estado ? "" : "none",
-                }}
-              >
-                <li>Reportes</li>
-              </motion.div>
-            </ul>
+            <Link to="/reportes">
+              <ul className="items_soporte">
+                <motion.div
+                  animate={{
+                    fontSize: props.estado ? "" : "17px",
+                    marginLeft: props.estado ? "10px" : "20px",
+                  }}
+                >
+                  <BiLineChartDown className="icon_soporte" />
+                </motion.div>
+                <motion.div
+                  animate={{
+                    display: props.estado ? "" : "none",
+                  }}
+                >
+                  <li>Reportes</li>
+                </motion.div>
+              </ul>
+            </Link>
             <ul className="items_soporte">
               <motion.div
                 animate={{
