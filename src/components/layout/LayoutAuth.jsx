@@ -27,7 +27,7 @@ const LayoutAuth = (props) => {
       
       <>
         <div className="grid place-items-center bg-gray-200 h-screen shadow-xl">
-          <div className=' flex border-solid border-2 bg-gray-50 rounded-3xl w-4/5 h-5/6'>
+          <div className=' flex border-solid border-2 bg-gray-50 rounded-3xl w-4/5 h-[90%]'>
             {isRegistrando
               ?<Register 
                 estado={handleChange} 

@@ -3,10 +3,10 @@ import React from "react";
 const tabla = () => {
   return (
     <div
-      className="w-full min-h-[520px] ml-[20px] border border-gray-300"
+      className="w-full min-h-[490px] ml-[20px] rounded border border-gray-300"
       style={{ background: "#DFF0D8", overflow: "auto" }}
     >
-      <h1 className="text-[20px] text-lime-600 font-semibold ml-[15px] mt-[10px] mb-[18px]">
+      <h1 className="text-[21px] text-lime-700 font-semibold ml-[15px] mt-[10px] mb-[18px]">
         Lista de facturas en un periodo
       </h1>
       <div className="w-[100px]">

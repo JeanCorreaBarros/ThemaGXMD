@@ -1,6 +1,6 @@
 import { BiSearch } from "react-icons/bi";
 
-const parametros = () => {
+const parametros = (Cambiar) => {
   return (
     <div
       className="w-[200px] min-w-[200px] h-[60%] border border-gray-300 bg-white"
@@ -64,6 +64,7 @@ const parametros = () => {
         />
         {/***boton vista previa***/}
         <button
+          onClick={Cambiar}
           className="w-full h-[33px] mb-[25px] border rounded-[4px]"
           style={{ background: "#66a31c", borderColor: "#66a31c" }}
         ></button>
